@@ -1,0 +1,187 @@
+name: "python virtualenv CI workflow ubuntu"
+
+
+on:
+  push:
+    branches: [ dev ]
+  # pull_request:
+  #   branches: [ githubactions_powershell ]
+
+
+jobs:
+
+  ubuntu-1604-python3x-virtualenvwrapper:
+    name: "Setting Up Python 3x virtualenvwrapper on ubuntu-latest - ubuntu-16.04"
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status 
+    - name: "Setting Up Python 3x virtual environment (Pipenv)"
+      run: |
+        set -o errexit
+        set -o pipefail
+        set -o nounset
+        set -o xtrace
+        echo "=============Setting Up virtualenvwrapper============="
+        sudo apt-get update -qq
+        whoami
+        pwd && ls -lai
+        python --version
+        python -V
+        python3 -V
+        python2 -V
+        #Installing virtualenvwrapper
+        pip --version
+        pip install virtualenvwrapper
+        export WORKON_HOME=~/Envs
+        source /usr/local/bin/virtualenvwrapper.sh
+        #Create a virtual environment
+        #creates the project_folder folder inside ~/Envs
+        mkvirtualenv project_folder
+        #Work on a virtual environment
+        workon project_folder
+        pip install requests
+        #create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions
+        pip freeze > requirements.txt
+        #list of installed packages without the requirements
+        pip list
+        deactivate
+        rmvirtualenv venv        
+        python --version
+        python -V
+        python3 -V
+        python2 -V
+
+  ubuntu-1804-python3x-virtualenvwrapper:
+    name: "Setting Up Python 3x virtualenvwrapper on ubuntu-latest - ubuntu-18.04"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status 
+    - name: "Setting Up Python 3x virtual environment (Pipenv)"
+      run: |
+        set -o errexit
+        set -o pipefail
+        set -o nounset
+        set -o xtrace
+        echo "=============Setting Up virtualenvwrapper============="
+        sudo apt-get update -qq
+        whoami
+        pwd && ls -lai
+        python --version
+        python -V
+        python3 -V
+        python2 -V
+        #Installing virtualenvwrapper
+        pip --version
+        pip install virtualenvwrapper
+        export WORKON_HOME=~/Envs
+        source /usr/local/bin/virtualenvwrapper.sh
+        #Create a virtual environment
+        #creates the project_folder folder inside ~/Envs
+        mkvirtualenv project_folder
+        #Work on a virtual environment
+        workon project_folder
+        pip install requests
+        #create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions
+        pip freeze > requirements.txt
+        #list of installed packages without the requirements
+        pip list
+        deactivate
+        rmvirtualenv venv        
+        python --version
+        python -V
+        python3 -V
+        python2 -V 
+
+  ubuntu-2004-python3x-virtualenvwrapper:
+    name: "Setting Up Python 3x virtualenvwrapper on ubuntu-20.04"
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status 
+    - name: "Setting Up Python 3x virtual environment (Pipenv)"
+      run: |
+        set -o errexit
+        set -o pipefail
+        set -o nounset
+        set -o xtrace
+        echo "=============Setting Up virtualenvwrapper============="
+        sudo apt-get update -qq
+        whoami
+        pwd && ls -lai
+        python --version
+        python -V
+        python3 -V
+        python2 -V
+        #Installing virtualenvwrapper
+        pip --version
+        pip install virtualenvwrapper
+        export WORKON_HOME=~/Envs
+        source /usr/local/bin/virtualenvwrapper.sh
+        #Create a virtual environment
+        #creates the project_folder folder inside ~/Envs
+        mkvirtualenv project_folder
+        #Work on a virtual environment
+        workon project_folder
+        pip install requests
+        #create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions
+        pip freeze > requirements.txt
+        #list of installed packages without the requirements
+        pip list
+        deactivate
+        rmvirtualenv venv        
+        python --version
+        python -V
+        python3 -V
+        python2 -V 
+
+  ubuntu-2004-python3x-virtualenvwrapper_0:
+    name: "Setting Up Python 3x virtualenvwrapper on ubuntu-20.04"
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: "os fingerprinting"
+      run: hostnamectl status 
+    - name: "Setting Up Python 3x virtual environment (Pipenv)"
+      run: |
+        set -o errexit
+        set -o pipefail
+        set -o nounset
+        set -o xtrace
+        echo "=============Setting Up virtualenvwrapper============="
+        sudo apt-get update -qq
+        whoami
+        pwd && ls -lai
+        python --version
+        python -V
+        python3 -V
+        python2 -V
+        #Installing virtualenvwrapper
+        pip --version
+        pip install virtualenvwrapper
+        export WORKON_HOME=~/Envs
+        source /usr/local/bin/virtualenvwrapper.sh
+        #List all of the environments
+        lsvirtualenv
+        #Create a virtual environment
+        #Create project directory inside $WORKON_HOME
+        # which is cd-ed into when you workon project_folder
+        mkproject project_folder
+        workon project_folder        
+        pip install requests
+        #create a requirements.txt file, which contains a simple list of all the packages in the current environment, and their respective versions
+        pip freeze > requirements.txt
+        #list of installed packages without the requirements
+        pip list
+        deactivate
+        #List all of the environments        
+        lsvirtualenv
+        rmvirtualenv venv        
+        python --version
+        python -V
+        python3 -V
+        python2 -V 

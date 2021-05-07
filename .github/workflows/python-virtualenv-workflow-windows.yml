@@ -1,11 +1,10 @@
-name: "python virtualenv CI workflow windows"
+name: "windows python virtualenv CI workflow"
 
 
 on:
   push:
-    branches: [ dev ]
-  # pull_request:
-  #   branches: [ githubactions_powershell ]
+    branches: [ test ]
+
 
 
 jobs:

@@ -3,9 +3,8 @@ name: "python virtualenv CI workflow ubuntu"
 
 on:
   push:
-    branches: [ dev ]
-  # pull_request:
-  #   branches: [ githubactions_powershell ]
+    branches: [ test ]
+
 
 
 jobs:

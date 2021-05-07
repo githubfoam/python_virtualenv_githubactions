@@ -1,2 +1,3 @@
 # python_virtualenv_githubactions
-python virtual environments
+
+[![windows python virtualenv CI workflow](https://github.com/githubfoam/python_virtualenv_githubactions/actions/workflows/python-virtualenv-workflow-windows.yml/badge.svg?branch=main)](https://github.com/githubfoam/python_virtualenv_githubactions/actions/workflows/python-virtualenv-workflow-windows.yml)

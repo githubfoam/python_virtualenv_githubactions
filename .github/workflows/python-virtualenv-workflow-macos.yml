@@ -36,7 +36,7 @@ jobs:
           pip install virtualenv
           cd ~/ 
           pwd
-          virtualenv venv 
+          # virtualenv venv #command not found 
           # virtualenv venv --system-site-packages
           # source venv/bin/activate
           # deactivate                               
@@ -61,7 +61,7 @@ jobs:
         run: system_profiler | more  
       - name: "osfingerprinting"
         run: uname -a     
-      - name: "Install virtualenv"
+      - name: "Install virtualenvwrapper"
         run: |
           pip install virtualenvwrapper
 

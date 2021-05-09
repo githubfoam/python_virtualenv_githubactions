@@ -1,4 +1,4 @@
-name: "python pipenv CI workflow ubuntu"
+name: "ubuntu pipenv python  CI workflow "
 
 
 on:

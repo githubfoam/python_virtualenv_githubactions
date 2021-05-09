@@ -1,4 +1,4 @@
-name: "python virtualenv CI workflow macos"
+name: "macos python virtualenv CI workflow "
 
 
 on:

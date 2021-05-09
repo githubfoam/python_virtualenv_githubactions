@@ -1,4 +1,4 @@
-name: "python virtualenv CI workflow ubuntu"
+name: "ubuntu python virtualenv CI workflow "
 
 
 on:

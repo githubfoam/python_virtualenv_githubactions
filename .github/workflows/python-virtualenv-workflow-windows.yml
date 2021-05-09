@@ -1,4 +1,4 @@
-name: "python virtualenv CI workflow windows"
+name: "windows python virtualenv CI workflow "
 
 
 on:

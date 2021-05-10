@@ -1,0 +1,148 @@
+name: "macos python virtualenv CI workflow "
+
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+      - cron:  '0 0 1 * *' ##execution of a task in the first minute of the month      
+
+
+
+jobs:
+
+
+  macos-latest:
+      name: "virtualenv macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update      
+      - name: "check on brew version"
+        run: brew --version   #Homebrew 2.5.12   
+      - name: "brew cask list"
+        run:   brew list --cask #Warning: Calling brew cask list is deprecated! Use brew list [--cask] instead.
+      - name: "brew list"
+        run: brew list --formula #List all the installed formulas
+      - name: "Get OS X System Version"
+        run: sw_vers       
+      - name: "Get Mac System Details with system_profiler"
+        run: system_profiler | more  
+      - name: "osfingerprinting"
+        run: uname -a     
+      - name: "Install virtualenv"
+        run: |
+          pip install virtualenv
+          cd ~/ 
+          pwd
+          # virtualenv venv #command not found 
+          # virtualenv venv --system-site-packages
+          # source venv/bin/activate
+          # deactivate                               
+
+  macos-latest-virtualenvwrapper:
+      name: "virtualenvwrapper macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update      
+      - name: "check on brew version"
+        run: brew --version   #Homebrew 2.5.12   
+      - name: "brew cask list"
+        run:   brew list --cask #Warning: Calling brew cask list is deprecated! Use brew list [--cask] instead.
+      - name: "brew list"
+        run: brew list --formula #List all the installed formulas
+      - name: "Get OS X System Version"
+        run: sw_vers       
+      - name: "Get Mac System Details with system_profiler"
+        run: system_profiler | more  
+      - name: "osfingerprinting"
+        run: uname -a     
+      - name: "Install virtualenvwrapper"
+        run: |
+          pip install virtualenvwrapper
+
+  macos-latest-pyenv-virtualenvwrapper:
+      name: "pyenv virtualenvwrapper macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update      
+      - name: "check on brew version"
+        run: brew --version   #Homebrew 2.5.12   
+      - name: "brew cask list"
+        run:   brew list --cask #Warning: Calling brew cask list is deprecated! Use brew list [--cask] instead.
+      - name: "brew list"
+        run: brew list --formula #List all the installed formulas
+      - name: "Get OS X System Version"
+        run: sw_vers       
+      - name: "Get Mac System Details with system_profiler"
+        run: system_profiler | more  
+      - name: "osfingerprinting"
+        run: uname -a     
+      - name: "Install pyenv"
+        run: |
+          brew install pyenv
+          cd ~/
+          # echo 'eval "$(pyenv init -)"' >> .bash_profile
+          # brew install zlib sqlite
+          # export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+          # export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+          # pyenv install 3.7.3
+          # pyenv global 3.7.3
+          # $(pyenv which python3) -m pip install virtualenvwrapper
+          # echo 'export WORKON_HOME=~/.virtualenvs' >> .bash_profile
+          # echo 'mkdir -p $WORKON_HOME' >> .bash_profile
+          # echo '. ~/.pyenv/versions/3.7.3/bin/virtualenvwrapper.sh' >> .bash_profile
+          # exec /bin/bash -l #Close the terminal and open a new one (or run exec /bin/bash -l to refresh the current terminal session
+          # mkvirtualenv test1
+          # mkvirtualenv test2
+          # ls $WORKON_HOME
+          # workon test1
+          # deactivate 
+
+  macos-latest-pyenv-virtualenv:
+      name: "pyenv virtualenv macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update      
+      - name: "check on brew version"
+        run: brew --version   #Homebrew 2.5.12   
+      - name: "brew cask list"
+        run:   brew list --cask #Warning: Calling brew cask list is deprecated! Use brew list [--cask] instead.
+      - name: "brew list"
+        run: brew list --formula #List all the installed formulas
+      - name: "Get OS X System Version"
+        run: sw_vers       
+      - name: "Get Mac System Details with system_profiler"
+        run: system_profiler | more  
+      - name: "osfingerprinting"
+        run: uname -a     
+      - name: "Install pyenv"
+        run: |
+          brew install pyenv-virtualenv # Install pyenv-virtualenv 
+          # echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile  # Add pyenv-virtualenv initializer to shell startup script
+          # source ~/.bash_profile # Reload your profile
+          # pyenv install 3.9.4 # Install Python 3.9.4
+          # pyenv virtualenv 3.9.4 django-3.2 # Create a new virtual environment
+          # pyenv activate django-3.2 # Activate Virtual Environment
+          # pip install django==3.2 # install Django 3.2
+          # pyenv virtualenv 3.9.4 django-3.1 # create another virtual environment for our project that uses Django 3.1
+          # pyenv activate django-3.1
+          # pip install django=3.1
+          # echo 'eval "$(pyenv init -)"' >> .bash_profile
+          # brew install zlib sqlite
+          # export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+          # export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+          # pyenv install 3.7.3
+          # pyenv global 3.7.3          
+

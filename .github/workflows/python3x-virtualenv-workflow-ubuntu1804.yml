@@ -1,4 +1,4 @@
-name: "python virtualenv pip pip3 VIRTUALENVWRAPPER CI workflow ubuntu 20.04"
+name: "python virtualenv pip pip3 VIRTUALENVWRAPPER CI workflow ubuntu 18.04"
 
 
 on:
@@ -10,8 +10,8 @@ on:
 jobs:
 
   ubuntu-2004-python3x-virtualenv-pip:
-    name: "Setting Up Python 3x virtualenv on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x virtualenv on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -48,8 +48,8 @@ jobs:
         python2 -V   
 
   ubuntu-2004-python3x-virtualenv-pip-python2x:
-    name: "Setting Up Python 3x virtualenv on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x virtualenv on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -88,8 +88,8 @@ jobs:
 
 
   ubuntu-2004-python3x-virtualenv-pip-VIRTUALENVWRAPPER-python2x:
-    name: "Setting Up Python 3x virtualenv (Pipenv) on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x virtualenv (Pipenv) on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -128,8 +128,8 @@ jobs:
 
 
   ubuntu-2004-python3x-python3venv-job:
-    name: "Setting Up Python 3x (python3-venv) on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x (python3-venv) on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -164,8 +164,8 @@ jobs:
         python2 -V   
 
   ubuntu-2004-python3x-pip3-source-virtualenv-job:
-    name: "Setting Up Python 3x (source virtualenv) on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x (source virtualenv) on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -196,8 +196,8 @@ jobs:
         python2 -V   
 
   ubuntu-2004-python3x-pip3-virtualenv-job:
-    name: "Setting Up Python 3x (.virtualenv) on ubuntu-20.04"
-    runs-on: ubuntu-20.04
+    name: "Setting Up Python 3x (.virtualenv) on ubuntu-18.04"
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"

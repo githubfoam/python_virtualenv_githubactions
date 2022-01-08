@@ -3,7 +3,7 @@ name: "python3x pipenv CI workflow ubuntu"
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
   # pull_request:
   #   branches: [ githubactions_powershell ]
 
